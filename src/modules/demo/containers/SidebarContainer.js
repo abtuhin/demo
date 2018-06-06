@@ -43,6 +43,7 @@ class SidebarContainer extends Component {
 					categories={this.props.categories}
 					searchItems={this.props.searchItems}
 					searchText={this.state.searchText}
+					parent={this.props.parent}
 				/>
 			</div>
 		);
@@ -52,7 +53,8 @@ class SidebarContainer extends Component {
 const mapStateToProps = store => {
 	return {
 		categories: store.demo.categories,
-		searchItems: store.demo.searchItems
+		searchItems: store.demo.searchItems,
+		parent: store.demo.parent
 	};
 };
 

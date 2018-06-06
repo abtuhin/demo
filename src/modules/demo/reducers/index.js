@@ -11,9 +11,15 @@ export const demoReducer = (state = INITIAL_STATE, action) => {
 				categories: action.payload
 			};
 		case "SEARCH_ITEM_RESOLVED":
+			let categories = state.categories;
+			let parent = action.payload.map(item => {
+				return categories.filter(val => val.Id == item.ParentCategoryId);
+			});
+			// console.log(paren);
 			return {
 				...state,
-				searchItems: action.payload
+				searchItems: action.payload,
+				parent: parent
 			};
 
 		default:
