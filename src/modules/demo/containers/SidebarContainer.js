@@ -8,13 +8,20 @@ class SidebarContainer extends Component {
 	constructor(props) {
 		super(props);
 	}
+
+	componentDidMount() {
+		this.props.getCategories();
+	}
+
 	render() {
-		return <SidebarComponent />;
+		return <SidebarComponent categories={this.props.categories} />;
 	}
 }
 
 const mapStateToProps = store => {
-	return {};
+	return {
+		categories: store.demo.categories
+	};
 };
 
 const mapDispatchToProps = dispatch => {
