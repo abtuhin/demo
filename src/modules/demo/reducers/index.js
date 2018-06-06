@@ -1,16 +1,19 @@
 const INITIAL_STATE = {
-	categories: []
+	categories: [],
+	searchItems: []
 };
 
 export const demoReducer = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case "GET_DATA_RESOLVED":
-			
 			return {
 				...state,
 				categories: action.payload
-				// root: action.payload.filter(item => item.ParentCategoryId == 0),
-				// parent: action.payload.filter(item => item.ParentCategoryId == 0 && item.)
+			};
+		case "SEARCH_ITEM_RESOLVED":
+			return {
+				...state,
+				searchItems: action.payload
 			};
 
 		default:
